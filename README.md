@@ -55,7 +55,7 @@ MRS records:
 - Each operator is a small Python class registered via the Operator Registry.
 
 ### Drop-In Presets  
-`simple`, `reasoning`, `full_chain`  ready for production use.
+`simple`, `reasoning`, `full_chain` presets included for immediate use and extension.
 
 ---
 
@@ -86,12 +86,19 @@ print(result["phase"])
 
 # Example Output
 ```bash 
-[REFLECT] [TRANSFORM]
-MRS-CORE IS A MODULAR DETERMINISTIC REASONING PIPELINE.
+FINAL TEXT:
+[REFLECT] [TRANSFORM] THIS IS A TEST OF MRS-CORE.
+[EVAL CHARS=49 WORDS=8]
 
-[EVAL CHARS=95 WORDS=14]
-
-PHASE: rewrite
+LOG:
+- Transform applied
+- [PHASE] start → transform
+- Reflect applied
+- [PHASE] transform → reflect
+- Evaluate applied
+- [PHASE] reflect → evaluate
+- Rewrite applied
+- [PHASE] evaluate → rewrite
 ```
 ---
 
@@ -134,6 +141,11 @@ for name in ["simple", "reasoning", "full_chain"]:
     print(f"=== {name.upper()} ===")
     print(result["text"])
 ```
+
+Note: Presets are *example chains*, not semantic models.
+Operators are deterministic components; their meaning depends on the chain design. 
+`full_chain` is intentionally simple and does not represent a cognitive process.
+
 ---
 
 # Operator Anatomy
@@ -142,7 +154,7 @@ for name in ["simple", "reasoning", "full_chain"]:
 - receives the current ReasoningState
 - modifies state.text
 - appends to state.log
-- updates state.phase
+- engine updates state.phase automatically based on the operator's phase transition rules
 - records an entry in state.history
 
 ### Example:
@@ -151,7 +163,7 @@ for name in ["simple", "reasoning", "full_chain"]:
 class ReflectOperator(Operator):
     phase = ("transform", "reflect")
 
-    def run(self, state):
+    def run(self, state, **kwags):
         state.text = f"[REFLECT] {state.text}"
         state.log.append("Reflect applied")
         return state
