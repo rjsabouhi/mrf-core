@@ -1,10 +1,10 @@
-from mrfcore.engine import MRFCoreEngine
-from mrfcore.presets import get_preset
-from mrfcore.registry import OperatorRegistry
+from mrs.engine import MRSCoreEngine
+from mrs.presets import get_preset
+from mrs.registry import OperatorRegistry
 
 
 TEST_TEXT = """
-MRF-Core is a modular deterministic reasoning pipeline.
+MRS-Core is a modular deterministic reasoning pipeline.
 We want to verify operator chaining, state transitions,
 phase enforcement, and output determinism.
 """
@@ -15,7 +15,7 @@ def run_test(name, operators):
     print(f"RUNNING TEST: {name}")
     print("============================")
 
-    engine = MRFCoreEngine(enforce_phases=True)
+    engine = MRSCoreEngine(enforce_phases=True)
     result = engine.run_chain(operators, TEST_TEXT)
 
     print("\nFINAL TEXT:")
@@ -45,7 +45,6 @@ def test_random_chains():
     ops = ["transform", "reflect", "evaluate", "rewrite",
            "inspect", "filter", "summarize"]
 
-    # 1. Arbitrary developer chain
     chain = [
         ("transform", {}),
         ("rewrite", {"mode": "upper"}),
@@ -62,19 +61,19 @@ def test_invalid_operator():
 
     chain = [
         ("transform", {}),
-        ("fake_operator", {}),  # ← should throw an exception
+        ("fake_operator", {}),  # should error
         ("summarize", {}),
     ]
 
     try:
-        engine = MRFCoreEngine()
+        engine = MRSCoreEngine()
         engine.run_chain(chain, TEST_TEXT)
     except Exception as e:
         print("EXPECTED ERROR:", e)
 
 
 def main():
-    print("\n=== MRF-CORE FULL TEST SUITE ===\n")
+    print("\n=== MRS-CORE FULL TEST SUITE ===\n")
 
     test_presets()
     test_random_chains()
@@ -85,4 +84,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

@@ -1,11 +1,11 @@
-from mrfcore.engine import MRFCoreEngine
-from mrfcore.presets import get_preset
+from mrs.engine import MRSCoreEngine
+from mrs.presets import get_preset
 
 
 def main():
-    engine = MRFCoreEngine()
+    engine = MRSCoreEngine()
     operators = get_preset("reasoning")
-    result = engine.run_chain(operators, "This is a test of MRF-Core.")
+    result = engine.run_chain(operators, "This is a test of MRS-Core.")
 
     print("\nFINAL TEXT:\n", result["text"])
     print("\nLOG:")

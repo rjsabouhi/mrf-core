@@ -1,5 +1,5 @@
-from mrfcore.state import ReasoningState
-from mrfcore.registry import OperatorRegistry
+from mrs.state import ReasoningState
+from mrs.registry import OperatorRegistry
 
 operators = [
     "transform",

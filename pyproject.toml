@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mrs-core"
+version = "0.1.0"
+description = "MRS-Core: A deterministic modular reasoning engine."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+
+authors = [
+    { name = "Ryan Sabouhi" }
+]
+
+keywords = [
+    "reasoning",
+    "agents",
+    "AI",
+    "framework",
+    "pipeline",
+    "MRS",
+    "modular reasoning"
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mrs", "mrs.*"]
+
+[project.urls]
+Homepage = "https://github.com/rjsabouhi/mrs-core"
+Repository = "https://github.com/rjsabouhi/mrs-core"
+BugTracker = "https://github.com/rjsabouhi/mrs-core/issues"

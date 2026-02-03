@@ -1,4 +1,4 @@
-from mrfcore.registry import OPERATOR_REGISTRY
+from mrs.registry import OPERATOR_REGISTRY
 
 print("\n=== OPERATORS REGISTERED ===")
 for name in sorted(OPERATOR_REGISTRY.keys()):

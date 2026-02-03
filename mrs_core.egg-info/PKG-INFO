@@ -1,7 +1,33 @@
-# Modular Reasoning System (MRS-Core)
+Metadata-Version: 2.4
+Name: mrs-core
+Version: 0.1.0
+Summary: MRS-Core: A deterministic modular reasoning engine.
+Author: Ryan Sabouhi
+License: Apache-2.0
+Project-URL: Homepage, https://github.com/rjsabouhi/mrs-core
+Project-URL: Repository, https://github.com/rjsabouhi/mrs-core
+Project-URL: BugTracker, https://github.com/rjsabouhi/mrs-core/issues
+Keywords: reasoning,agents,AI,framework,pipeline,MRS,modular reasoning
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: NOTICE
+Dynamic: license-file
+
+# Modular Reasoning Framework (MRF-Core)
 *A deterministic, operator-based reasoning engine for LLMs and autonomous agents.*
 
-MRS-Core provides a transparent, modular, reproducible reasoning substrate built from a small set of reusable operators:
+MRF-Core provides a transparent, modular, reproducible reasoning substrate built from a small set of reusable operators:
 
 - Transform  
 - Reflect  
@@ -11,11 +37,11 @@ MRS-Core provides a transparent, modular, reproducible reasoning substrate built
 - Inspect  
 - Filter  
 
-MRS makes reasoning traceable, auditable, and deterministic—without requiring chain-of-thought exposure or hidden model internals.
+MRF makes reasoning traceable, auditable, and deterministic—without requiring chain-of-thought exposure or hidden model internals.
 
 ---
 
-# Why MRS-Core Exists
+# Why MRF-Core Exists
 
 ### Every agent framework today suffers from the same structural failures:
 
@@ -24,7 +50,7 @@ MRS makes reasoning traceable, auditable, and deterministic—without requiring 
 - No visibility into intermediate states  
 - No enforceable phases or operator logic  
 
-### MRS-Core solves this by introducing:
+### MRF-Core solves this by introducing:
 
 - Explicit operator-level reasoning  
 - Strict phase transition model  
@@ -32,9 +58,9 @@ MRS makes reasoning traceable, auditable, and deterministic—without requiring 
 - Deterministic, reproducible outputs  
 - Plug-and-play integration for ANY agent system  
 
-MRS is **not** an alignment system.  
-MRS is **not** a sandbox.  
-### MRS is a *reasoning substrate*.
+MRF is **not** an alignment system.  
+MRF is **not** a sandbox.  
+### MRF is a *reasoning substrate*.
 
 ---
 
@@ -45,7 +71,7 @@ MRS is **not** a sandbox.
 - Output is repeatable.
 
 ### Transparent Logs & History  
-MRS records:  
+MRF records:  
 - final text  
 - operator log  
 - phase trace  
@@ -62,7 +88,7 @@ MRS records:
 # Install
 
 ```bash
-pip install mrs-core
+pip install mrf-core
 ```
 
 ---
@@ -70,13 +96,13 @@ pip install mrs-core
 
 # Quick Start
 ```bash
-from mrs.engine import MRSCoreEngine
-from mrs.presets import get_preset
+from mrfcore.engine import MRFCoreEngine
+from mrfcore.presets import get_preset
 
-engine = MRSCoreEngine()
+engine = MRFCoreEngine()
 ops = get_preset("reasoning")
 
-result = engine.run_chain(ops, "MRS-Core is a modular deterministic reasoning pipeline.")
+result = engine.run_chain(ops, "MRF-Core is a modular deterministic reasoning pipeline.")
 
 print(result["text"])
 print(result["log"])
@@ -87,7 +113,7 @@ print(result["phase"])
 # Example Output
 ```bash 
 [REFLECT] [TRANSFORM]
-MRS-CORE IS A MODULAR DETERMINISTIC REASONING PIPELINE.
+MRF-CORE IS A MODULAR DETERMINISTIC REASONING PIPELINE.
 
 [EVAL CHARS=95 WORDS=14]
 
@@ -97,9 +123,9 @@ PHASE: rewrite
 
 # Running a Manual Operator Chain
 ```bash
-from mrs.engine import MRSCoreEngine
+from mrfcore.engine import MRFCoreEngine
 
-engine = MRSCoreEngine()
+engine = MRFCoreEngine()
 
 ops = [
     ("transform", {}),
@@ -117,20 +143,20 @@ print(result["history"])
 
 # Using Presets
 
-### MRS-Core includes preset chains:
+### MRF-Core includes preset chains:
 - simple
 - reasoning
 - full_chain
 
 ```bash
-from mrs.engine import MRSCoreEngine
-from mrs.presets import get_preset
+from mrfcore.engine import MRFCoreEngine
+from mrfcore.presets import get_preset
 
-engine = MRSCoreEngine()
+engine = MRFCoreEngine()
 
 for name in ["simple", "reasoning", "full_chain"]:
     ops = get_preset(name)
-    result = engine.run_chain(ops, "MRS-Core preset test")
+    result = engine.run_chain(ops, "MRF-Core preset test")
     print(f"=== {name.upper()} ===")
     print(result["text"])
 ```
@@ -160,7 +186,7 @@ class ReflectOperator(Operator):
 
 # Project Structure
 ```bash
-mrs-core/
+mrfcore/
     engine.py
     registry.py
     state.py
@@ -180,15 +206,15 @@ examples/
 ```
 ---
 
-# What MRS-Core Is Not
+# What MRF-Core Is Not
 
-### MRS-Core is **NOT**:
+### MRF-Core is **NOT**:
 - an alignment system  
 - a safety guarantee  
 - a sandbox  
 - a replacement for secure execution layers  
 
-### MRS-Core **IS**:
+### MRF-Core **IS**:
 - a deterministic reasoning layer  
 - an operator execution engine  
 - an audit-friendly cognition scaffold  
@@ -214,7 +240,7 @@ Ryan Sabouhi
 # Notice
 
 This software contains original work developed as part of the  
-**Modular Reasoning System (MRS-Core)** by **Ryan Sabouhi**.  
+**Modular Reasoning Framework (MRF-Core)** by **Ryan Sabouhi**.  
 See the `NOTICE` file for attribution details.
 
 #
