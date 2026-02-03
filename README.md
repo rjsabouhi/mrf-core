@@ -1,7 +1,7 @@
 # Modular Reasoning Framework (MRF-Core)
 *A deterministic, operator-based reasoning engine for LLMs and autonomous agents.*
 
-MRF-Core provides a transparent, modular, reproducible reasoning substrate built from a small set of reusable operators:
+### MRF-Core provides a transparent, modular, reproducible reasoning substrate built from a small set of reusable operators:
 
 - Transform  
 - Reflect  
@@ -11,7 +11,7 @@ MRF-Core provides a transparent, modular, reproducible reasoning substrate built
 - Inspect  
 - Filter  
 
-MRF makes reasoning traceable, auditable, and deterministic—without requiring chain-of-thought exposure or hidden model internals.
+### MRF makes reasoning traceable, auditable, and deterministic—without requiring chain-of-thought exposure or hidden model internals.
 
 ---
 
@@ -32,9 +32,9 @@ MRF makes reasoning traceable, auditable, and deterministic—without requiring 
 - Deterministic, reproducible outputs  
 - Plug-and-play integration for ANY agent system  
 
-MRF is **not** an alignment system.  
-MRF is **not** a sandbox.  
-MRF is a *reasoning substrate*.
+#### MRF is **not** an alignment system.  
+#### MRF is **not** a sandbox.  
+## MRF is a *reasoning substrate*.
 
 ---
 
@@ -69,6 +69,7 @@ pip install mrf-core
 
 
 # Quick Start
+```bash
 from mrfcore.engine import MRFCoreEngine
 from mrfcore.presets import get_preset
 
@@ -77,7 +78,6 @@ ops = get_preset("reasoning")
 
 result = engine.run_chain(ops, "MRF-Core is a modular deterministic reasoning pipeline.")
 
-```bash
 print(result["text"])
 print(result["log"])
 print(result["phase"])
