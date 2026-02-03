@@ -1,7 +1,7 @@
 # Modular Reasoning Framework (MRF-Core)
 *A deterministic, operator-based reasoning engine for LLMs and autonomous agents.*
 
-### MRF-Core provides a transparent, modular, reproducible reasoning substrate built from a small set of reusable operators:
+MRF-Core provides a transparent, modular, reproducible reasoning substrate built from a small set of reusable operators:
 
 - Transform  
 - Reflect  
@@ -11,7 +11,7 @@
 - Inspect  
 - Filter  
 
-### MRF makes reasoning traceable, auditable, and deterministic—without requiring chain-of-thought exposure or hidden model internals.
+MRF makes reasoning traceable, auditable, and deterministic—without requiring chain-of-thought exposure or hidden model internals.
 
 ---
 
@@ -32,9 +32,9 @@
 - Deterministic, reproducible outputs  
 - Plug-and-play integration for ANY agent system  
 
-#### MRF is **not** an alignment system.  
-#### MRF is **not** a sandbox.  
-## MRF is a *reasoning substrate*.
+MRF is **not** an alignment system.  
+MRF is **not** a sandbox.  
+### MRF is a *reasoning substrate*.
 
 ---
 
@@ -198,7 +198,7 @@ examples/
 
 # Contributing
 
-PRs welcome — especially new operators, presets, or diagnostics.
+PRs welcome, especially new operators, presets, or diagnostics.
 
 ---
 
