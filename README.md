@@ -17,14 +17,14 @@ MRF makes reasoning traceable, auditable, and deterministic—without requiring 
 
 # Why MRF-Core Exists
 
-Every agent framework today suffers from the same structural failures:
+### Every agent framework today suffers from the same structural failures:
 
 - No consistent reasoning sequence  
 - No deterministic backbone  
 - No visibility into intermediate states  
--  No enforceable phases or operator logic  
+- No enforceable phases or operator logic  
 
-# MRF-Core solves this by introducing:
+### MRF-Core solves this by introducing:
 
 - Explicit operator-level reasoning  
 - Strict phase transition model  
@@ -40,21 +40,21 @@ MRF is a *reasoning substrate*.
 
 # Features
 
-### • Deterministic Reasoning Chains  
+### Deterministic Reasoning Chains  
 - Operators execute in strict order.  
 - Output is repeatable.
 
-### • Transparent Logs & History  
+### Transparent Logs & History  
 MRF records:  
 - final text  
 - operator log  
 - phase trace  
 - structured history of every step  
 
-### • Simple, Extensible Operators  
+### Simple, Extensible Operators  
 - Each operator is a small Python class registered via the Operator Registry.
 
-### • Drop-In Presets  
+### Drop-In Presets  
 `simple`, `reasoning`, `full_chain`  ready for production use.
 
 ---
@@ -117,7 +117,7 @@ print(result["history"])
 
 # Using Presets
 
-MRF-Core includes preset chains:
+### MRF-Core includes preset chains:
 - simple
 - reasoning
 - full_chain
@@ -137,14 +137,15 @@ for name in ["simple", "reasoning", "full_chain"]:
 ---
 
 # Operator Anatomy
-Every operator:
+
+### Every operator:
 - receives the current ReasoningState
 - modifies state.text
 - appends to state.log
 - updates state.phase
 - records an entry in state.history
 
-Example:
+### Example:
 ```bash
 @register_operator("reflect")
 class ReflectOperator(Operator):
@@ -181,13 +182,13 @@ examples/
 
 # What MRF-Core Is Not
 
-MRF-Core is **NOT**:
+### MRF-Core is **NOT**:
 - an alignment system  
 - a safety guarantee  
 - a sandbox  
 - a replacement for secure execution layers  
 
-MRF-Core **IS**:
+### MRF-Core **IS**:
 - a deterministic reasoning layer  
 - an operator execution engine  
 - an audit-friendly cognition scaffold  
