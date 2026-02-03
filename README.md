@@ -11,7 +11,7 @@ MRS-Core provides a transparent, modular, reproducible reasoning substrate built
 - Inspect  
 - Filter  
 
-MRS makes reasoning traceable, auditable, and deterministic—without requiring chain-of-thought exposure or hidden model internals.
+MRS makes reasoning traceable, auditable, and deterministic all without requiring chain-of-thought exposure or hidden model internals.
 
 ---
 
