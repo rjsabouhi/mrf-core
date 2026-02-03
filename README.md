@@ -40,21 +40,21 @@ MRF is a *reasoning substrate*.
 
 # Features
 
-# • Deterministic Reasoning Chains  
-Operators execute in strict order.  
-Output is repeatable.
+### • Deterministic Reasoning Chains  
+- Operators execute in strict order.  
+- Output is repeatable.
 
-# • Transparent Logs & History  
+### • Transparent Logs & History  
 MRF records:  
 - final text  
 - operator log  
 - phase trace  
 - structured history of every step  
 
-# • Simple, Extensible Operators  
-Each operator is a small Python class registered via the Operator Registry.
+### • Simple, Extensible Operators  
+- Each operator is a small Python class registered via the Operator Registry.
 
-# • Drop-In Presets  
+### • Drop-In Presets  
 `simple`, `reasoning`, `full_chain`  ready for production use.
 
 ---
